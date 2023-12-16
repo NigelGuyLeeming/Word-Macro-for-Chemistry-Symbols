@@ -1,0 +1,27 @@
+Sub ChemistrySymbolsFindAndReplace()
+    Dim findStrings As Variant
+    Dim replaceStrings As Variant
+    Dim i As Integer
+    Dim f As Variant
+    findStrings = Array(":equilibrium:", ":degrees:", ":squareroot:", ":approximately:", ":arrow:", ":sigma:", ":delta:")
+    replaceStrings = Array(ChrW(&H21CC), "°", ChrW(&H221A), ChrW(&H2248), ChrW(&H2192), ChrW(931), ChrW(916))
+    Dim c As Range
+    Set c = ActiveDocument.Content
+    For i = 0 To UBound(findStrings)
+        With c.Find
+            .ClearFormatting
+            .Replacement.ClearFormatting
+            .Text = findStrings(i)
+            .Replacement.Text = replaceStrings(i)
+            .Forward = True
+            .Wrap = wdFindContinue
+            .Format = False
+            .MatchCase = False
+            .MatchWholeWord = False
+            .MatchWildcards = False
+            .MatchSoundsLike = False
+            .MatchAllWordForms = False
+        End With
+        c.Find.Execute Replace:=wdReplaceAll
+    Next i
+End Sub
