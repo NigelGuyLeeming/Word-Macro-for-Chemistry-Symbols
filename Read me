@@ -1,0 +1,29 @@
+In Microsft Word, type a symbol name between two colons, e.g.
+
+PCl5 (g) :equilibrium: PCl3 (g) + Cl2 (g) 
+Then run the macro and it is convertewd to 
+PCl5 (g) ⇌ PCl3 (g) + Cl2 (g) 
+
+or 
+
+:delta:G:degrees: = -RT ln(K)
+ΔG° = -RT ln(K) 
+
+
+There are only a few so far
+
+:equilibrium:
+:degrees:
+:squareroot:
+:approximately:
+:arrow:
+:sigma:
+:delta:
+
+⇌
+°
+√
+≈
+→
+Σ
+Δ
